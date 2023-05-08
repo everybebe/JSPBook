@@ -1,0 +1,68 @@
+1. 폼 페이지에서 입력된 데이터를 전달하는 요청 파라미터 값을 JSP 페이지로 가져오는 
+      내장 객체는 무엇인지, 그리고 관련된 메소드에 대해 간단히 설명하시오.
+     
+   - request
+      - getParameter : name인 값을 전달 받는다. 파라미터에 값이 없으면 null을 반환
+      - getParameterValues : name인 값을 배열 형태로 전달 받는다. 값으 없으면 null이 반환
+2.
+	- response
+		- sendRedirect(String url) : 설정한 url로 강제 이동
+	
+
+
+3.  out 내장객체
+
+
+
+4.      
+
+
+------------------6장---------------------------------------------------
+
+01. form 태그에 사용하는 속성에 대해 간단히 설명하시오.
+
+
+action: 폼 데이터를 받아 처리하는 웹 페이지의 URL을 설정한다.
+method: 폼 데이터가 전송되는 HTTP방식을 설정한다. (get 방식 or post방식)
+name: 폼을 식별하기 위한 이름을 설정한다.
+
+
+02. form 태그 내에 중첩하여 사용하는 태그를 나열하고 설명하시오.
+input 태그: 사용자가 텍스트입력, 선택 등을 다양하게 할 수 있도록 공간을 만드는 태그다.
+select 태그: 여러 개의 항목이 나타나는 목록 상자에서 항목을 선택하는 태그로, 반드시 option태그를 포함해야한다.
+textarea 태그: 여러 줄의 텍스트를 입력할 수 있는 태그로, 입력폼 안에 사용된 태그와 띄어쓰기가 그대로 출력된다.
+
+03. 폼 페이지에서 전송된 데이터를 전달받는 내장 객체와 관련된 메소드는 무엇인가?
+
+request 내장 객체
+
+메소드
+1. 요청 파라미터의 값 받기: getParameter("요청 파라미터 이름");
+2. 요청 파라미터의 값을 배열로 받기: getParameterValues("요청 파라미터 이름");
+3. 요청 파라미터의 전체 값 받기: 
+ 1) getParameterNames(): 모든 입력 양식의 요청 파라미터 이름을 순서에 상관없이 Enumeration형태로 전달받는다.
+ 2) hasMoreElements(): Enumeration 요소가 있으면 true, 없으면 false를 반환한다.
+ 3) nextElement(): Enumeration 요소를 반환한다.
+ 
+ 
+4. 
+
+
+
+5.  
+
+
+
+-------------------------------------7장------------------------
+1. 파일 업로드를 위한 form 태그 내에 반드시 설정해야 하는 기법은 무엇인가?
+	enctype="multipart/form-data" method="post" 
+	input태그의 type속성을 file로 설정해야 한다.
+
+
+2. 파일 서버에 업로드 하는 처리 기법에 대해 간단히 설명하시오
+	MultipartRequest 클래스를 이용하거나 Common-FileUpload를 통해 파일을 업로드할 수 있다.
+
+	MultipartRequest 클래스는 cos.jar 파일을 추가하고, 
+	MultipartRequest 클래스 객체를 생성하여 생성된 MultipartRequest 객체의 메서드를 사용하여 처리한다. 
+	Common-FileUpload는 DiskFileUpload 객체를 생성하여 제공해주는 메소드를 통해 파일을 처리하고 업로드한다. 
+	Common-FileUpload를 이용하려면 라이브러리에 commons-fileupload.jar 파일과 commons-io.jar 파일이 존재해야 한다.
